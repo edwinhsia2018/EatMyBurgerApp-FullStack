@@ -36,7 +36,7 @@ var orm = {
         })
     },
 
-    create: function (ttable, cols, vals, cb) {
+    create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
         queryString += " (";
         queryString += cols.toString();
