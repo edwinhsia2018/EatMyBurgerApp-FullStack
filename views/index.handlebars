@@ -7,32 +7,29 @@
 
 <div class="container">
   <div class="row">
-    <div class="col s6">
-      {{#each burgers}} {{#unless this.devoured}}
-      <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-        <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-      </form>
-      {{/unless}} {{/each}}
+    <div class="col-md-6">
+      <h4 class="uneatenBurgers">Ready Burgers!</h4>
+      <ul>
+        {{#each burgers}} {{#unless devoured}} <div class="form-control">{{burger_name}}{{> burger-block devoured=true}}</div> {{/unless}} {{/each}}
+      </ul>
     </div>
 
-    <div class="col s6">
-      {{#each burgers}} {{#if this.devoured}}
-      <div class='burgerEaten'>
-        <div>
-          {{this.burger_name}}
-        </div>
-      </div>
-      {{/if}} {{/each}}
+    <div class="col-md-6">
+      <h4 class="devouredBurgers">Devoured Burgers!</h4>
+      <ul>
+        {{#each burgers}} {{#if devoured}} <div class="form-control">{{burger_name}}</div>{{/if}} {{/each}}
+      </ul>
     </div>
   </div>
 </div>
 
-<form class="create-form" method="POST">
+<h2>Add a Burger</h2>
+<form class="create-form">
 
   <div class="form-group">
-    <label for="burger">Enter a new burger</label>
-    <input type="text" id="name" name="burger_name">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="burger_name">
   </div>
 
-  <button type="submit" class="addBurgerButton">Burger Time!</button>
+  <button type="submit">Burger Time!</button>
 </form>
