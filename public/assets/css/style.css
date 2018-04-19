@@ -5,4 +5,18 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+    text-align: center;
+    height: 14em;
+}
+.devouredBurgers {
+    padding: 5px;
+    margin: 2px;
+    border: 2px;
+    float: right;
+}
+.uneatenBurgers {
+    padding: 5px;
+    margin: 2px;
+    border: 2px;
+    float: left;
 }
